@@ -42,9 +42,12 @@ def get_input_args():
     parser = argparse.ArgumentParser()
 
     # Create 3 command line arguments as mentioned above using add_argument() from ArguementParser method
+    #1. Image Folder as --dir with default value 'pet_images'
     parser.add_argument('--dir', type=str, default='pet_images/', 
                         help='path to folder of images')
+    #2. CNN Model Architecture as --arch with default value 'vgg'
     parser.add_argument('--arch', default = 'vgg' )
+    #3. Text File with Dog Names as --dogfile with default value 'dognames.txt'
     parser.add_argument('--dogfile', default = 'dognames.txt' )
     # Replace None with parser.parse_args() parsed argument collection that 
     # you created with this function 

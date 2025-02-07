@@ -42,24 +42,18 @@ def get_pet_labels(image_dir):
          index 0 = pet image label (string)
     """
      # Creates list of files in directory
-    file_list = listdir(image_dir)
-    # Processes each of the files to create a dictionary where the key
-    # is the filename and the value is the picture label 
+    file_list = listdir(image_dir)   
  
     # Creat empty dictionary for the results
     results_dictionary = dict()
    
     # Processes through each file in the directory, extracting only the words
     # of the file that contain the pet image label
-    for idx in range(0, len(file_list), 1):
-
-       
-       # Skips file if starts with . (like .DS_Store of Mac OSX) because it 
-       # isn't an pet image file
+    for idx in range(0, len(file_list), 1):       
+       # Exclude files if they starts with "." because it isn't an pet image file
       if file_list[idx][0] != ".":
       # Creates temporary label variable to hold pet label name extracted 
          pet_label = ""
-
            # TODO: 2a. BELOW REPLACE pass with CODE that will process each 
            #          filename in the in_files list to extract the dog breed 
            #          name from the filename. Recall that each filename can be
@@ -67,9 +61,9 @@ def get_pet_labels(image_dir):
            #          extracted dog breed name in the variable pet_label 
            #          that's created as an empty string ABOVE
 
-         pet_breed_lower =file_list[idx].lower()
+         pet_breed_lower = file_list[idx].lower()
          word_list_pet_breed = pet_breed_lower.split("_")       
-
+         # Loop through the list and check if the word are only letters
          for word in word_list_pet_breed:
             if word.isalpha():
                pet_label += word + " "
