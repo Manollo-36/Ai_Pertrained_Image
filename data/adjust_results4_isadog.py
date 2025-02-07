@@ -75,20 +75,13 @@ def adjust_results4_isadog(results_dic, dogfile):
     with open(dogfile, "r") as infile:
         # Reads in dognames from first line in file
         line = infile.readline()
-        # Processes each line in file until reaching EOF (end-of-file) by 
-        # processing line and adding dognames to dognames_dic with while loop
         while line != "":
-            # TODO: 4a. REPLACE pass with CODE to remove the newline character
-            #           from the variable line  
-            #
-            # Process line by striping newline from line
             line =  line.rstrip()
             #print(line)
             if line in dognames_dic:
                 dognames_dic[line]=line
             else:
                 dognames_dic[line] = 1
-
 
             # Reads in next line in file to be processed with while loop
             # if this line isn't empty (EOF)
