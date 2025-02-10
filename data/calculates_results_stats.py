@@ -119,8 +119,8 @@ def calculates_results_stats(results_dic):
 
      
     # Calculates % correct for matches
-    results_stats_dic['pct_match'] = (results_stats_dic['n_images'] / 
-                                      results_stats_dic['n_dogs_img']) *100.0
+    results_stats_dic['pct_match'] = (results_stats_dic['n_match'] / 
+                                      results_stats_dic['n_images']) *100.0
 
       
     # Calculates % correct dogs

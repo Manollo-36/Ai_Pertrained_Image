@@ -87,20 +87,20 @@ def adjust_results4_isadog(results_dic, dogfile):
             # if this line isn't empty (EOF)
           
             line = infile.readline()
-    for key in results_dic:
+    for value in results_dic.values():
         #print(key)
         # Pet Image Label IS of Dog (e.g. found in dognames_dic)
-        if results_dic[key][0] in dognames_dic:            
-            if results_dic[key][1] in dognames_dic:
-                results_dic[key].extend((1, 1))
+        if value[0] in dognames_dic:            
+            if value[1] in dognames_dic:
+                value.extend((1, 1))
                 #print(results_dic[key][1])
             else:
-                results_dic[key].extend((1, 0))
+                value.extend((1, 0))
 
         # Pet Image Label IS NOT a Dog image
         else:
-            if results_dic[key][1] in dognames_dic:
-                results_dic[key].extend((0, 1))
+            if value[1] in dognames_dic:
+                value.extend((0, 1))
             else:
-                results_dic[key].extend((0, 0))
+                value.extend((0, 0))
         

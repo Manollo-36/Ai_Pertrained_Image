@@ -49,19 +49,14 @@ def get_pet_labels(image_dir):
    
     # Processes through each file in the directory, extracting only the words
     # of the file that contain the pet image label
-    for idx in range(0, len(file_list), 1):       
+    for file_name in file_list: 
+
        # Exclude files if they starts with "." because it isn't an pet image file
-      if file_list[idx][0] != ".":
+      if file_name != ".":
       # Creates temporary label variable to hold pet label name extracted 
          pet_label = ""
-           # TODO: 2a. BELOW REPLACE pass with CODE that will process each 
-           #          filename in the in_files list to extract the dog breed 
-           #          name from the filename. Recall that each filename can be
-           #          accessed by in_files[idx]. Be certain to place the 
-           #          extracted dog breed name in the variable pet_label 
-           #          that's created as an empty string ABOVE
-
-         pet_breed_lower = file_list[idx].lower()
+           
+         pet_breed_lower = file_name.lower()
          word_list_pet_breed = pet_breed_lower.split("_")       
          # Loop through the list and check if the word are only letters
          for word in word_list_pet_breed:
@@ -74,12 +69,12 @@ def get_pet_labels(image_dir):
            # If filename doesn't already exist in dictionary add it and it's
            # pet label - otherwise print an error message because indicates 
            # duplicate files (filenames)
-         if file_list[idx] not in results_dictionary:
-            results_dictionary[file_list[idx]] = [pet_label]
+         if file_name not in results_dictionary:
+            results_dictionary[file_name] = [pet_label]
             
          else:
             print("** Warning: Duplicate files exist in directory:", 
-                  file_list[idx])
+                  file_name)
     # Replace None with the results_dic dictionary that you created with this
     # function
     return results_dictionary
