@@ -96,8 +96,8 @@ def print_results(results_dic, results_stats_dic, model,
 
          # Pet Image Label is a Dog - Classified as NOT-A-DOG -OR- 
             # Pet Image Label is NOT-a-Dog - Classified as a-DOG
-        for value in results_stats_dic.values():
-                if (value[3:] == 1 and value[4:] == 0)or(value[3:] == 0 and value[4:] == 1):
+        for value in results_dic.values():
+                if (value[3] == 1 and value[4] == 0)or(value[3] == 0 and value[4] == 1):
                         print("Pet Label: {:>26}   Classifier Label: {:>30}".format(value[0],
                                                                        value[1]))
                         
