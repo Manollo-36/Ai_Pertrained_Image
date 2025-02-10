@@ -74,7 +74,7 @@ def classify_images(images_dir, results_dic, model):
        # set labels to lowercase (lower) and stripping off whitespace(strip)
        model_label = model_label.lower().strip()
        
-       truth = key[0] 
+       truth = value[0] 
        # defines truth as pet image label      
        if truth in model_label:
           value.extend([model_label,1])
